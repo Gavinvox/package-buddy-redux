@@ -1,0 +1,11 @@
+tests
+samples
+*.tar.gz
+.pytest_cache
+__pycache__
+**/__pycache__
+.env
+data
+client
+build_web.sh
+*.ab

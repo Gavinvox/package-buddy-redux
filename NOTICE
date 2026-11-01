@@ -1,0 +1,13 @@
+Package Buddy Redux
+Copyright (c) 2026 Gavinvox. Licensed under the MIT License (see LICENSE).
+
+Package Buddy Redux is an independent clean-room rebuild inspired by Package Buddy
+by Psyrus/Partial Software; not affiliated.
+
+The Android robot is reproduced or modified from work created and shared by Google
+and used according to terms described in the Creative Commons 3.0 Attribution License.
+
+Tracking data is provided by the 17TRACK API (https://api.17track.net/). Each user
+supplies their own 17TRACK API key; none is included. Not affiliated with 17TRACK.
+
+Roboto and Roboto Condensed fonts: SIL Open Font License 1.1 (client/assets/fonts).

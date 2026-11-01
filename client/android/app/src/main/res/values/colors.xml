@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Package Buddy Redux: dark navy window behind the app while it starts (no white flash). -->
+    <color name="pb_window">#0F131A</color>
+</resources>

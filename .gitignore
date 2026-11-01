@@ -1,0 +1,43 @@
+# secrets and data
+.env
+*.env
+!.env.example
+/data/
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.ab
+*.jks
+*.keystore
+*.p12
+*.pem
+key.properties
+local.properties
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# build outputs (go to GitHub Releases)
+app/web/
+dist/
+*.apk
+*.aab
+*.deb
+*.tar.gz
+
+# flutter / android / ide
+client/build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.gradle/
+.kotlin/
+.idea/
+*.iml
+.vscode/
+.DS_Store

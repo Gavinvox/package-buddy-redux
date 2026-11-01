@@ -1,0 +1,764 @@
+[
+{
+"legacy_index": 105,
+"legacy_code": "a1",
+"name": "A-1 International",
+"track17": null
+},
+{
+"legacy_index": 92,
+"legacy_code": "adrexo",
+"name": "Adrexo",
+"track17": null
+},
+{
+"legacy_index": 20,
+"legacy_code": "aero",
+"name": "Aeronet",
+"track17": 100742
+},
+{
+"legacy_index": 79,
+"legacy_code": "air21",
+"name": "Air21",
+"track17": null
+},
+{
+"legacy_index": 46,
+"legacy_code": "aacargo",
+"name": "American Airlines Cargo",
+"track17": null
+},
+{
+"legacy_index": 125,
+"legacy_code": "amerijet",
+"name": "AmeriJet",
+"track17": null
+},
+{
+"legacy_index": 106,
+"legacy_code": "anpost",
+"name": "An Post",
+"track17": 9051
+},
+{
+"legacy_index": 44,
+"legacy_code": "aramex",
+"name": "Aramex",
+"track17": 100006
+},
+{
+"legacy_index": 124,
+"legacy_code": "argix",
+"name": "Argix Direct",
+"track17": null
+},
+{
+"legacy_index": 102,
+"legacy_code": "ats",
+"name": "ATS Solutions",
+"track17": null
+},
+{
+"legacy_index": 11,
+"legacy_code": "auspost",
+"name": "Australia Post",
+"track17": 1151
+},
+{
+"legacy_index": 43,
+"legacy_code": "ausair",
+"name": "Australian Air Express",
+"track17": null
+},
+{
+"legacy_index": 89,
+"legacy_code": "belginpost",
+"name": "bPost",
+"track17": 2061
+},
+{
+"legacy_index": 68,
+"legacy_code": "belpost",
+"name": "Belpost",
+"track17": 2051
+},
+{
+"legacy_index": 5,
+"legacy_code": "canadapost",
+"name": "Canada Post",
+"track17": 3041
+},
+{
+"legacy_index": 45,
+"legacy_code": "ceva",
+"name": "CEVA",
+"track17": null
+},
+{
+"legacy_index": 93,
+"legacy_code": "chronopost",
+"name": "Chronopost",
+"track17": 100273
+},
+{
+"legacy_index": 16,
+"legacy_code": "citylink",
+"name": "City Link",
+"track17": 100081
+},
+{
+"legacy_index": 51,
+"legacy_code": "ccargo",
+"name": "Continental Cargo",
+"track17": null
+},
+{
+"legacy_index": 64,
+"legacy_code": "chinapost",
+"name": "China Post",
+"track17": 3011
+},
+{
+"legacy_index": 40,
+"legacy_code": "colissimo",
+"name": "Colissimo",
+"track17": 6051
+},
+{
+"legacy_index": 85,
+"legacy_code": "collectplus",
+"name": "Collect Plus",
+"track17": null
+},
+{
+"legacy_index": 38,
+"legacy_code": "correiosbr",
+"name": "Correios Brazil",
+"track17": 2151
+},
+{
+"legacy_index": 39,
+"legacy_code": "correoscl",
+"name": "Correos Chile",
+"track17": 3101
+},
+{
+"legacy_index": 74,
+"legacy_code": "correosec",
+"name": "Correos del Ecuador",
+"track17": null
+},
+{
+"legacy_index": 47,
+"legacy_code": "correoses",
+"name": "Correos Spain",
+"track17": 19181
+},
+{
+"legacy_index": 41,
+"legacy_code": "couriernz",
+"name": "Courier Post (NZ)",
+"track17": null
+},
+{
+"legacy_index": 62,
+"legacy_code": "cttportugal",
+"name": "CTT Portugal",
+"track17": null
+},
+{
+"legacy_index": 111,
+"legacy_code": "cypruspost",
+"name": "Cyprus Post",
+"track17": 3211
+},
+{
+"legacy_index": 29,
+"legacy_code": "db",
+"name": "DB Schenker",
+"track17": 100206
+},
+{
+"legacy_index": 119,
+"legacy_code": "dbprivpak",
+"name": "DB Schenker Privpak",
+"track17": null
+},
+{
+"legacy_index": 31,
+"legacy_code": "delta",
+"name": "Delta Cargo",
+"track17": null
+},
+{
+"legacy_index": 114,
+"legacy_code": "directfreight",
+"name": "Direct Freight Express",
+"track17": 101066
+},
+{
+"legacy_index": 3,
+"legacy_code": "dhl",
+"name": "DHL",
+"track17": 100001
+},
+{
+"legacy_index": 36,
+"legacy_code": "dhlacg",
+"name": "DHL ACG",
+"track17": null
+},
+{
+"legacy_index": 108,
+"legacy_code": "dhlbr",
+"name": "DHL Brazil",
+"track17": null
+},
+{
+"legacy_index": 54,
+"legacy_code": "dhlca",
+"name": "DHL Canada",
+"track17": null
+},
+{
+"legacy_index": 34,
+"legacy_code": "dhlde",
+"name": "DHL DE",
+"track17": 7041
+},
+{
+"legacy_index": 35,
+"legacy_code": "dhlgm",
+"name": "DHL GM",
+"track17": 7047
+},
+{
+"legacy_index": 73,
+"legacy_code": "dhlpl",
+"name": "DHL Poland",
+"track17": null
+},
+{
+"legacy_index": 49,
+"legacy_code": "dhlsame",
+"name": "DHL Same Day",
+"track17": null
+},
+{
+"legacy_index": 86,
+"legacy_code": "dhlse",
+"name": "DHL Sweden",
+"track17": null
+},
+{
+"legacy_index": 55,
+"legacy_code": "dhluk",
+"name": "DHL UK",
+"track17": null
+},
+{
+"legacy_index": 9,
+"legacy_code": "dpd",
+"name": "DPD",
+"track17": 100007
+},
+{
+"legacy_index": 110,
+"legacy_code": "dpdie",
+"name": "DPD Ireland",
+"track17": 100142
+},
+{
+"legacy_index": 72,
+"legacy_code": "dpdpl",
+"name": "DPD Poland",
+"track17": 100111
+},
+{
+"legacy_index": 37,
+"legacy_code": "dpduk",
+"name": "DPD UK",
+"track17": 100010
+},
+{
+"legacy_index": 117,
+"legacy_code": "dynamex",
+"name": "Dynamex",
+"track17": null
+},
+{
+"legacy_index": 90,
+"legacy_code": "empost",
+"name": "Empost",
+"track17": null
+},
+{
+"legacy_index": 13,
+"legacy_code": "ems",
+"name": "EMS",
+"track17": 100685
+},
+{
+"legacy_index": 7,
+"legacy_code": "ensenda",
+"name": "Ensenda",
+"track17": null
+},
+{
+"legacy_index": 126,
+"legacy_code": "expeditors",
+"name": "Expeditors",
+"track17": 100270
+},
+{
+"legacy_index": 0,
+"legacy_code": "fedex",
+"name": "FedEx",
+"track17": 100003
+},
+{
+"legacy_index": 69,
+"legacy_code": "fedexuk",
+"name": "FedEx UK",
+"track17": 100003
+},
+{
+"legacy_index": 27,
+"legacy_code": "flyt",
+"name": "Flyt Express",
+"track17": null
+},
+{
+"legacy_index": 30,
+"legacy_code": "forward",
+"name": "Forward Air",
+"track17": null
+},
+{
+"legacy_index": 50,
+"legacy_code": "gls",
+"name": "GLS",
+"track17": 100005
+},
+{
+"legacy_index": 17,
+"legacy_code": "gso",
+"name": "GSO",
+"track17": null
+},
+{
+"legacy_index": 59,
+"legacy_code": "hdnl",
+"name": "HDNL",
+"track17": null
+},
+{
+"legacy_index": 56,
+"legacy_code": "hermes",
+"name": "Hermes",
+"track17": 100018
+},
+{
+"legacy_index": 113,
+"legacy_code": "hermesuk",
+"name": "Hermes UK",
+"track17": 100331
+},
+{
+"legacy_index": 12,
+"legacy_code": "hongkongpost",
+"name": "Hong Kong Post",
+"track17": 8011
+},
+{
+"legacy_index": 103,
+"legacy_code": "iparcel",
+"name": "i-parcel",
+"track17": 100015
+},
+{
+"legacy_index": 120,
+"legacy_code": "interlink",
+"name": "Interlink Express",
+"track17": null
+},
+{
+"legacy_index": 97,
+"legacy_code": "irishpost",
+"name": "Irish Post",
+"track17": null
+},
+{
+"legacy_index": 18,
+"legacy_code": "israelpost",
+"name": "Israel Post",
+"track17": 9061
+},
+{
+"legacy_index": 107,
+"legacy_code": "itella",
+"name": "Itella",
+"track17": 6041
+},
+{
+"legacy_index": 76,
+"legacy_code": "japanems",
+"name": "Japan Post",
+"track17": 10021
+},
+{
+"legacy_index": 53,
+"legacy_code": "korea",
+"name": "Korea Post",
+"track17": 11051
+},
+{
+"legacy_index": 22,
+"legacy_code": "laser",
+"name": "Lasership",
+"track17": 100052
+},
+{
+"legacy_index": 80,
+"legacy_code": "lbc",
+"name": "LBC Express",
+"track17": 100264
+},
+{
+"legacy_index": 71,
+"legacy_code": "luxpost",
+"name": "Luxembourg Post",
+"track17": 12101
+},
+{
+"legacy_index": 75,
+"legacy_code": "magyar",
+"name": "Magyar Posta",
+"track17": 8051
+},
+{
+"legacy_index": 15,
+"legacy_code": "mailexpress",
+"name": "Mail Express",
+"track17": null
+},
+{
+"legacy_index": 121,
+"legacy_code": "matkahuolto",
+"name": "Matkahuolto",
+"track17": 100161
+},
+{
+"legacy_index": 81,
+"legacy_code": "metrowide",
+"name": "Metrowide Courier Express",
+"track17": null
+},
+{
+"legacy_index": 91,
+"legacy_code": "mrw",
+"name": "MRW ES",
+"track17": null
+},
+{
+"legacy_index": 57,
+"legacy_code": "newgistics",
+"name": "Newgistics",
+"track17": 100395
+},
+{
+"legacy_index": 58,
+"legacy_code": "ocs",
+"name": "OCS",
+"track17": null
+},
+{
+"legacy_index": 77,
+"legacy_code": "olddom",
+"name": "Old Dominion",
+"track17": null
+},
+{
+"legacy_index": 14,
+"legacy_code": "ontrac",
+"name": "OnTrac",
+"track17": 100049
+},
+{
+"legacy_index": 8,
+"legacy_code": "parcelforce",
+"name": "Parcel Force",
+"track17": 11033
+},
+{
+"legacy_index": 96,
+"legacy_code": "polish",
+"name": "Poczta Polska",
+"track17": null
+},
+{
+"legacy_index": 67,
+"legacy_code": "ponyexpress",
+"name": "PonyExpress Post",
+"track17": null
+},
+{
+"legacy_index": 87,
+"legacy_code": "indonesianpost",
+"name": "Pos Indonesia",
+"track17": 9031
+},
+{
+"legacy_index": 116,
+"legacy_code": "posindonesia",
+"name": "Pos Indonesia (Registered)",
+"track17": null
+},
+{
+"legacy_index": 118,
+"legacy_code": "posdaftar",
+"name": "Pos Malaysia (Pos Daftar)",
+"track17": null
+},
+{
+"legacy_index": 88,
+"legacy_code": "posmalaysia",
+"name": "Pos Malaysia",
+"track17": 13051
+},
+{
+"legacy_index": 66,
+"legacy_code": "poslaju",
+"name": "Pos Laju",
+"track17": null
+},
+{
+"legacy_index": 42,
+"legacy_code": "postat",
+"name": "Post Austria",
+"track17": 1161
+},
+{
+"legacy_index": 115,
+"legacy_code": "postnl",
+"name": "Post NL",
+"track17": 14041
+},
+{
+"legacy_index": 21,
+"legacy_code": "postde",
+"name": "Post Denmark",
+"track17": 4011
+},
+{
+"legacy_index": 10,
+"legacy_code": "postenno",
+"name": "Posten.no",
+"track17": null
+},
+{
+"legacy_index": 28,
+"legacy_code": "postense",
+"name": "Posten.se",
+"track17": 19241
+},
+{
+"legacy_index": 122,
+"legacy_code": "ppl",
+"name": "PPL",
+"track17": null
+},
+{
+"legacy_index": 60,
+"legacy_code": "prestige",
+"name": "Prestige",
+"track17": null
+},
+{
+"legacy_index": 19,
+"legacy_code": "purolator",
+"name": "Purolator",
+"track17": 100042
+},
+{
+"legacy_index": 26,
+"legacy_code": "quick",
+"name": "Quick International",
+"track17": null
+},
+{
+"legacy_index": 100,
+"legacy_code": "randl",
+"name": "R & L Carriers",
+"track17": null
+},
+{
+"legacy_index": 4,
+"legacy_code": "royalmail",
+"name": "Royal Mail",
+"track17": 11031
+},
+{
+"legacy_index": 23,
+"legacy_code": "russia",
+"name": "Russian Post",
+"track17": 18031
+},
+{
+"legacy_index": 83,
+"legacy_code": "saudipost",
+"name": "Saudi Post",
+"track17": 19071
+},
+{
+"legacy_index": 84,
+"legacy_code": "servientrega",
+"name": "Servientrega",
+"track17": 100495
+},
+{
+"legacy_index": 65,
+"legacy_code": "singapore",
+"name": "Singapore Post",
+"track17": 19131
+},
+{
+"legacy_index": 94,
+"legacy_code": "sefreight",
+"name": "Southeast Freight",
+"track17": null
+},
+{
+"legacy_index": 52,
+"legacy_code": "startrack",
+"name": "Star Track Express",
+"track17": null
+},
+{
+"legacy_index": 104,
+"legacy_code": "streamlite",
+"name": "Streamlite",
+"track17": null
+},
+{
+"legacy_index": 61,
+"legacy_code": "swiss",
+"name": "Swiss Post",
+"track17": 19251
+},
+{
+"legacy_index": 24,
+"legacy_code": "teamww",
+"name": "Team Worldwide",
+"track17": 100613
+},
+{
+"legacy_index": 6,
+"legacy_code": "tnt",
+"name": "TNT",
+"track17": 100004
+},
+{
+"legacy_index": 63,
+"legacy_code": "tntau",
+"name": "TNT Express Austraila",
+"track17": 100200
+},
+{
+"legacy_index": 123,
+"legacy_code": "tntpostnl",
+"name": "TNT Post NL",
+"track17": null
+},
+{
+"legacy_index": 70,
+"legacy_code": "tntuk",
+"name": "TNT UK",
+"track17": 100004
+},
+{
+"legacy_index": 101,
+"legacy_code": "toll",
+"name": "Toll IPEC",
+"track17": null
+},
+{
+"legacy_index": 127,
+"legacy_code": "tollpost",
+"name": "Tollpost",
+"track17": null
+},
+{
+"legacy_index": 78,
+"legacy_code": "turkey",
+"name": "Turkish Post",
+"track17": null
+},
+{
+"legacy_index": 112,
+"legacy_code": "ucs",
+"name": "UCS",
+"track17": 190852
+},
+{
+"legacy_index": 99,
+"legacy_code": "ukmail",
+"name": "UKMail",
+"track17": null
+},
+{
+"legacy_index": 25,
+"legacy_code": "ukraine",
+"name": "Ukrposhta",
+"track17": 21021
+},
+{
+"legacy_index": 1,
+"legacy_code": "ups",
+"name": "UPS",
+"track17": 100002
+},
+{
+"legacy_index": 33,
+"legacy_code": "upsair",
+"name": "UPS Air Cargo",
+"track17": 100002
+},
+{
+"legacy_index": 32,
+"legacy_code": "upsmi",
+"name": "UPS Mail Innovations",
+"track17": 100398
+},
+{
+"legacy_index": 48,
+"legacy_code": "upsslns",
+"name": "UPS Supply Chain Solutions",
+"track17": null
+},
+{
+"legacy_index": 2,
+"legacy_code": "usps",
+"name": "USPS",
+"track17": 21051
+},
+{
+"legacy_index": 82,
+"legacy_code": "xend",
+"name": "Xend",
+"track17": null
+},
+{
+"legacy_index": 98,
+"legacy_code": "yodel",
+"name": "Yodel",
+"track17": 100017
+},
+{
+"legacy_index": 95,
+"legacy_code": "yrc",
+"name": "YRC",
+"track17": null
+}
+]

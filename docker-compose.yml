@@ -1,0 +1,31 @@
+# Package Buddy Redux server - Portainer stack / docker compose file.
+#
+# In Portainer: Stacks > Add stack > "Repository" (if this folder is in git) or
+# "Web editor" (paste this file; build the image first, see README).
+# Fill in the values under "environment" (or use Portainer's
+# "Environment variables" section, which fills the ${...} placeholders).
+
+services:
+  packagebuddy:
+    image: packagebuddy-server:latest
+    build: .                      # used by "docker compose up -d --build"; Portainer's Web editor ignores it
+    container_name: packagebuddy
+    restart: unless-stopped
+    ports:
+      - "8765:8765"               # change the LEFT number if 8765 is already used on your server
+    environment:
+      TRACK17_API_KEY: ${TRACK17_API_KEY}           # your 17TRACK key (keep it secret)
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}      # first admin, created on first start only
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}             # at least 8 characters
+      POLL_INTERVAL_MINUTES: ${POLL_INTERVAL_MINUTES:-60}
+      ALLOW_SIGNUP: ${ALLOW_SIGNUP:-false}          # false = only the admin creates accounts
+      AUTO_ARCHIVE_DAYS: ${AUTO_ARCHIVE_DAYS:-7}
+      REQUIRE_APPROVAL: ${REQUIRE_APPROVAL:-false}  # true = admin approves every new number
+      MONTHLY_NEW_NUMBERS_PER_USER: ${MONTHLY_NEW_NUMBERS_PER_USER:-0}  # 0 = no limit
+      DISABLE_REGISTRATION: ${DISABLE_REGISTRATION:-false}  # true = never spend 17TRACK quota (safety switch)
+      TZ: ${TZ:-America/Chicago}
+    volumes:
+      - packagebuddy-data:/data
+
+volumes:
+  packagebuddy-data:
