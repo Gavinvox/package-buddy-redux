@@ -100,7 +100,9 @@ class _DesktopController with TrayListener, WindowListener {
     if (icon != null) {
       await trayManager.setIcon(icon);
     }
-    // setToolTip is not implemented on Linux; skip it so the menu still installs.
+    const name = 'Package Buddy Redux';
+    await trayManager.setToolTip(name);
+    await trayManager.setTitle(name);
     await trayManager.setContextMenu(Menu(items: [
       MenuItem(key: 'open', label: 'Open'),
       MenuItem(key: 'check', label: 'Check now'),

@@ -161,6 +161,10 @@ MyApplication* my_application_new() {
   // corresponding .desktop file. This ensures better integration by allowing
   // the application to be recognized beyond its binary name.
   g_set_prgname(APPLICATION_ID);
+  // Used as the StatusNotifier Title fallback (and window titles) when the
+  // indicator has no explicit title. Must be the human-readable app name, not
+  // the application id, or Cinnamon shows "Net.packagebuddy...".
+  g_set_application_name("Package Buddy Redux");
 
   return MY_APPLICATION(g_object_new(my_application_get_type(),
                                      "application-id", APPLICATION_ID, "flags",

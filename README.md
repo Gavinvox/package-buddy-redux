@@ -231,7 +231,7 @@ battery usage to **Unrestricted**). Force-stopping the app stops checks until it
 For Debian 12+, Ubuntu 22.04+ and Linux Mint 21+ (amd64). Download the `.deb` from the release, then:
 
 ```
-sudo apt install ./packagebuddy-redux_0.4.0_amd64.deb
+sudo apt install ./packagebuddy-redux_0.4.1_amd64.deb
 ```
 
 Start **Package Buddy Redux** from the menu and enter your server address. By default the app

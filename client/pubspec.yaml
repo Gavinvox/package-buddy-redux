@@ -1,7 +1,7 @@
 name: packagebuddy
 description: "Package Buddy Redux client (self-hosted). Web, Android and Linux from one code base."
 publish_to: 'none'
-version: 0.4.0+4
+version: 0.4.1+5
 
 environment:
   sdk: ^3.13.7
@@ -20,6 +20,10 @@ dependencies:
   tray_manager: ^0.5.2
   path_provider: ^2.1.5
   path: ^1.9.1
+
+dependency_overrides:
+  tray_manager:
+    path: third_party/tray_manager
 
 dev_dependencies:
   flutter_test:

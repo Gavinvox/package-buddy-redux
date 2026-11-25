@@ -1,5 +1,5 @@
 // Keep in sync with client/pubspec.yaml (version: x.y.z+n).
-const kClientVersion = '0.4.0';
+const kClientVersion = '0.4.1';
 const kGithubRepo = 'Gavinvox/package-buddy-redux';
 const kGithubReleasesUrl = 'https://github.com/Gavinvox/package-buddy-redux/releases/latest';
 const kGithubLatestApi = 'https://api.github.com/repos/Gavinvox/package-buddy-redux/releases/latest';
