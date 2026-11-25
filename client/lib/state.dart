@@ -75,7 +75,10 @@ class AppState extends ChangeNotifier {
     await _prefs.setString('token', token);
     user = await api.me();
     await _prefs.remove(kNotifyCursor); // new session: start notifications from now
-    if (notificationsSupported) checkForUpdates(refreshFirst: false);
+    if (notificationsSupported) {
+      await afterLogin();
+      checkForUpdates(refreshFirst: false);
+    }
     notifyListeners();
   }
 

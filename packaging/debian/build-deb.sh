@@ -48,8 +48,8 @@ Architecture: amd64
 Installed-Size: $SIZE
 Maintainer: Gavinvox <noreply@users.noreply.github.com>
 Homepage: https://github.com/Gavinvox/package-buddy-redux
-Depends: libgtk-3-0, libglib2.0-0, libc6 (>= 2.34), libstdc++6, libblkid1, liblzma5
-Recommends: zenity
+Depends: libgtk-3-0, libglib2.0-0, libc6 (>= 2.34), libstdc++6, libblkid1, liblzma5, libayatana-appindicator3-1, libnotify4
+Recommends: zenity, pkexec
 Description: Package Buddy Redux desktop client
  Desktop app for a self-hosted Package Buddy Redux server. Syncs with your
  server account and shows desktop notifications for package updates while open.

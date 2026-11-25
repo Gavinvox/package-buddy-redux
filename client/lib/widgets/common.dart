@@ -20,14 +20,14 @@ void showError(BuildContext context, Object e) {
   if (context.mounted) toast(context, msg);
 }
 
-Future<bool> confirm(BuildContext context, String title, String body, {String ok = 'OK', bool danger = false}) async {
+Future<bool> confirm(BuildContext context, String title, String body, {String ok = 'OK', String cancel = 'Cancel', bool danger = false}) async {
   final r = await showDialog<bool>(
     context: context,
     builder: (c) => AlertDialog(
       title: Text(title),
       content: Text(body),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(c, false), child: const Text('Cancel')),
+        TextButton(onPressed: () => Navigator.pop(c, false), child: Text(cancel)),
         FilledButton(
           style: danger ? FilledButton.styleFrom(backgroundColor: Theme.of(c).colorScheme.error) : null,
           onPressed: () => Navigator.pop(c, true),

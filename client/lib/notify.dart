@@ -13,6 +13,9 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:workmanager/workmanager.dart';
 
+import 'desktop.dart';
+import 'widgets/common.dart';
+
 const kNotifyEnabled = 'notify_enabled';
 const kNotifyHours = 'notify_hours'; // 6, 12, 24 (0 = off)
 const kNotifyCursor = 'notify_cursor';
@@ -48,6 +51,7 @@ Future<bool> _initPlugin({bool foreground = false}) async {
 void _onTap(NotificationResponse r) {
   final id = int.tryParse(r.payload ?? '');
   if (id == null) return;
+  showDesktopWindow();
   if (onOpenPackage != null) {
     onOpenPackage!(id);
   } else {
@@ -87,6 +91,7 @@ Future<void> saveNotifySettings({bool? enabled, int? hours}) async {
 }
 
 Timer? _desktopTimer;
+Timer? _desktopSoon;
 
 Future<void> applySchedule() async {
   final (enabled, hours) = await loadNotifySettings();
@@ -98,16 +103,19 @@ Future<void> applySchedule() async {
           initialDelay: const Duration(minutes: 15),
           constraints: Constraints(networkType: NetworkType.connected),
           existingWorkPolicy: ExistingPeriodicWorkPolicy.update);
+      await enqueueImmediateCheck();
     } else {
       await Workmanager().cancelByUniqueName(_taskName);
     }
   } else if (_isLinux) {
     _desktopTimer?.cancel();
     _desktopTimer = null;
+    _desktopSoon?.cancel();
+    _desktopSoon = null;
     if (on) {
       _desktopTimer = Timer.periodic(Duration(hours: hours), (_) => checkForUpdates());
-      // check shortly after start too
-      Timer(const Duration(seconds: 20), () => checkForUpdates());
+      // check shortly after start (and when hidden in the tray) too
+      _desktopSoon = Timer(const Duration(seconds: 20), () => checkForUpdates());
     }
   }
 }
@@ -140,6 +148,83 @@ Future<void> openBatterySettings() async {
   try {
     await _battery.invokeMethod('request');
   } catch (_) {}
+}
+
+
+/// Re-register background work after login and seed the cursor.
+Future<void> afterLogin() async {
+  if (!notificationsSupported) return;
+  await applySchedule();
+}
+
+/// One-off WorkManager job so the first check does not wait for the 6-hour interval
+/// (or the 15-minute minimum of a periodic task).
+Future<void> enqueueImmediateCheck() async {
+  if (!_isAndroid) return;
+  final (enabled, hours) = await loadNotifySettings();
+  if (!(enabled && hours > 0)) return;
+  final p = await SharedPreferences.getInstance();
+  await p.reload();
+  if ((p.getString('token') ?? '').isEmpty) return;
+  try {
+    await Workmanager().registerOneOffTask('pb-check-once', _taskName,
+        constraints: Constraints(networkType: NetworkType.connected),
+        existingWorkPolicy: ExistingWorkPolicy.replace);
+  } catch (_) {}
+}
+
+const kAskedNotifyPerm = 'asked_notify_permission';
+const kAskedBattery = 'asked_battery_exemption';
+
+/// After login (or on first launch of 0.4.0): ask for notification permission
+/// and, once, for the battery exemption. Then make sure work is scheduled.
+Future<void> runNotificationOnboarding(BuildContext context) async {
+  if (!notificationsSupported) return;
+  if (_isAndroid) {
+    await _maybeAskNotifyPermission(context);
+    if (!context.mounted) return;
+    await applySchedule();
+    if (!context.mounted) return;
+    await _maybeAskBatteryExemption(context);
+  } else {
+    await applySchedule();
+  }
+}
+
+Future<void> _maybeAskNotifyPermission(BuildContext context) async {
+  if (await permissionGranted()) return;
+  final p = await SharedPreferences.getInstance();
+  if (p.getBool(kAskedNotifyPerm) ?? false) return;
+  if (!context.mounted) return;
+  final ok = await confirm(
+    context,
+    'Get package updates',
+    'Package Buddy Redux can notify you when a package moves or is delivered. '
+        'It checks your own server in the background (no Google account or cloud messaging). '
+        'Allow notifications?',
+    ok: 'Allow',
+    cancel: 'Not now',
+  );
+  await p.setBool(kAskedNotifyPerm, true);
+  if (ok) await requestPermission();
+}
+
+Future<void> _maybeAskBatteryExemption(BuildContext context) async {
+  if (await batteryUnrestricted()) return;
+  final p = await SharedPreferences.getInstance();
+  if (p.getBool(kAskedBattery) ?? false) return;
+  if (!context.mounted) return;
+  final ok = await confirm(
+    context,
+    'Allow background checks',
+    'Some phones (including Nokia) stop apps from running in the background to save battery, '
+        'so package notifications may never arrive. Allow Package Buddy Redux to run unrestricted? '
+        'You can change this later in Settings.',
+    ok: 'Allow',
+    cancel: 'Not now',
+  );
+  await p.setBool(kAskedBattery, true);
+  if (ok) await openBatterySettings();
 }
 
 /// Shared by the background job and the desktop timer.

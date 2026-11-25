@@ -3,9 +3,12 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../desktop.dart';
 import '../notify.dart';
 import '../platform/save_file.dart';
 import '../state.dart';
+import '../updater.dart';
+import '../version.dart';
 import '../widgets/common.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -35,6 +38,8 @@ class SettingsScreen extends StatelessWidget {
               const SectionHeader('Notifications'),
               const NotificationSettings(),
             ],
+            if (desktopSupported) const DesktopSettings(),
+            if (updatesSupported) const UpdateSettings(),
             const SectionHeader('Server'),
             ListTile(
               leading: const Icon(Icons.dns_outlined),
@@ -89,7 +94,7 @@ class SettingsScreen extends StatelessWidget {
             const ListTile(
               leading: AppLogo(size: 36),
               title: Text('Package Buddy Redux (self-hosted)'),
-              subtitle: Text('Client 0.3.0 · tracking data from 17TRACK via your own server'),
+              subtitle: Text('Client $kClientVersion · tracking data from 17TRACK via your own server'),
             ),
           ]),
         ),
@@ -326,13 +331,15 @@ class _NotificationSettingsState extends State<NotificationSettings> with Widget
     final (e, h) = await loadNotifySettings();
     final p = await permissionGranted();
     final b = await batteryUnrestricted();
-    if (mounted) setState(() {
-          enabled = e;
-          hours = h;
-          permission = p;
-          battery = b;
-          loaded = true;
-        });
+    if (mounted) {
+      setState(() {
+        enabled = e;
+        hours = h;
+        permission = p;
+        battery = b;
+        loaded = true;
+      });
+    }
   }
 
   Future<void> _setEnabled(bool v) async {

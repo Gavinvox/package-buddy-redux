@@ -18,7 +18,10 @@ Flutter app (Android, Linux desktop and a built-in web app) signs in to that ser
 - **Android notifications without Firebase:** the phone checks your server in the background every
   6, 12 or 24 hours (or Off) and shows one notification per package with the latest event. Tap it to
   open the package. Survives reboots.
-- **Linux desktop app** (.deb for Debian, Ubuntu and Mint) with desktop notifications while it runs.
+- **Linux desktop app** (.deb for Debian, Ubuntu and Mint): system tray, close-to-tray, start at login,
+  start minimized, and desktop notifications while the app is running (including when it is hidden).
+- **In-app updates:** Android and desktop check GitHub for a new release and can install it
+  (APK or `.deb`) from inside the app.
 - **Web app built into the server:** open `http://SERVER:8765/` in any browser.
 - **Multi-user:** accounts, admin area, optional approvals and monthly limits, long-lived API tokens.
 - **17TRACK quota protection:** each number is registered once, no matter how many people track it.
@@ -28,9 +31,13 @@ Flutter app (Android, Linux desktop and a built-in web app) signs in to that ser
 
 All screenshots use test data only.
 
-| Desktop | Notification settings | Desktop notification |
+| Desktop | Settings (tray, startup, updates) | Tray menu |
 |---|---|---|
-| <img src="docs/screenshots/desktop-window.png" width="420"> | <img src="docs/screenshots/desktop-settings-notifications.png" width="220"> | <img src="docs/screenshots/desktop-notification-closeup.png" width="300"> |
+| <img src="docs/screenshots/desktop-window.png" width="420"> | <img src="docs/screenshots/desktop-settings-toggles.png" width="220"> | <img src="docs/screenshots/desktop-tray-menu.png" width="260"> |
+
+A desktop notification looks like this:
+
+<img src="docs/screenshots/desktop-notification-closeup.png" width="320" alt="Desktop notification example">
 
 ---
 
@@ -208,7 +215,9 @@ Send tokens as `Authorization: Bearer <token>` (or an `X-API-Key: <token>` heade
    phone (allow installs from your browser/file manager when asked).
 2. On the sign-in screen tap **Server address** and enter `http://SERVER-IP:8765` or
    `https://pb.example.com`.
-3. **Settings > Notifications**: allow notifications and pick 6 h, 12 h, 24 h or Off.
+3. After sign-in, the app asks once for notification permission (Android 13+) and once to turn off
+   battery optimization so background checks actually run (important on Nokia phones). Notifications
+   are on by default, every 6 hours; you can change this or turn them off in **Settings > Notifications**.
 
 The release APK is signed with a debug key. Android will only update it with an APK signed by the
 same key, so if you build your own, uninstall first.
@@ -222,11 +231,18 @@ battery usage to **Unrestricted**). Force-stopping the app stops checks until it
 For Debian 12+, Ubuntu 22.04+ and Linux Mint 21+ (amd64). Download the `.deb` from the release, then:
 
 ```
-sudo apt install ./packagebuddy-redux_0.3.0_amd64.deb
+sudo apt install ./packagebuddy-redux_0.4.0_amd64.deb
 ```
 
-Start **Package Buddy Redux** from the menu and enter your server address. Desktop notifications are
-shown while the app is running. Remove with `sudo apt remove packagebuddy-redux`.
+Start **Package Buddy Redux** from the menu and enter your server address. By default the app
+starts at login, starts minimized to the tray on those autostart launches, and closing the window
+hides it to the tray instead of quitting (all of this can be turned off in Settings). Desktop
+notifications keep working while it is hidden; click a notification or the tray icon (Open / Check
+now / Quit) to bring the window back. Remove with `sudo apt remove packagebuddy-redux`.
+
+The first time you run 0.4.0, it writes `~/.config/autostart/packagebuddy-redux.desktop`. Turning
+**Start at login** off removes that file. **Start minimized** only applies to those autostart
+launches (the file gets a `--minimized` flag); opening the app from the menu still shows the window.
 
 ## Building from source
 
@@ -253,6 +269,32 @@ from `samples/make_samples.py` (all numbers in them are made up).
 `tools/openwebui/` has an [Open WebUI](https://openwebui.com/) tool that lets a local AI model query
 17TRACK directly. See `tools/openwebui/SETUP.md`. It needs its own 17TRACK key set in the tool's
 settings; no key is included.
+
+## In-app updates
+
+On Android and Linux the app checks
+`https://api.github.com/repos/Gavinvox/package-buddy-redux/releases/latest` at startup and at most
+once a day (Settings toggle, on by default). If a newer version is published it shows the release
+notes with **Update now**, **Later** or **Skip this version**.
+
+- **Android** downloads `packagebuddy-redux-arm64.apk` and opens the system installer. You may be
+  asked to allow Package Buddy Redux to install unknown apps. Because the official APKs are all
+  signed with the same debug key, this replaces the existing install. Building your own APK with a
+  different key will not update in place.
+- **Linux** downloads `packagebuddy-redux_<version>_amd64.deb` and installs it with
+  `pkexec apt-get install ./file.deb` (a graphical password prompt). If `pkexec` is not available,
+  the release page is opened instead. After a successful install the app offers to restart.
+
+Release asset names must stay stable so the matcher keeps working:
+
+| Asset | Name pattern |
+|---|---|
+| Android APK (arm64) | `packagebuddy-redux-arm64.apk` (or `packagebuddy-redux-arm64*.apk`) |
+| Linux desktop | `packagebuddy-redux_<version>_amd64.deb` |
+| Server tarball | `packagebuddy-server.tar.gz` |
+
+v0.3.0 has no updater, so going from 0.3.0 to 0.4.0 is a one-time manual install; later updates can
+be done from inside the app.
 
 ## Credits and notice
 
